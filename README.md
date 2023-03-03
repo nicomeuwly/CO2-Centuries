@@ -35,4 +35,5 @@ Le but du projet est d'aider les utilisateurs à mieux comprendre comment les é
 *Références : Qui d'autre dans le web ou dans la recherche a utilisé ces données ? Dans quel but ?*
 
 Nous avons trouvé plusieurs sites utilisant ces données pour faire divers représentations dont voici une liste :
-- [Global Carbon Atlas](http://www.globalcarbonatlas.org/en/CO2-emissions) : Ils ont utilisé ces données pour représenter graphiquement l'évolution de la quantité d'émission de CO2 produit par pays au fil des années de 1960 à 2021. Ils les présentent sous forme de carte, de diagramme ou encore de bulles. 
+- Le [Global Carbon Atlas](http://www.globalcarbonatlas.org/en/CO2-emissions) utilise ces données pour représenter graphiquement l'évolution de la quantité d'émission de CO2 produit par pays au fil des années de 1960 à 2021. Ils les présentent sous forme de carte, de diagramme ou encore de bulles. 
+- Le [Global Carbon Budet](https://essd.copernicus.org/articles/14/4811/2022/), repris ici dans la revue scientifique "Earth System Science Data" (ESSD) publiée par Copernicus Publications, s'appuie sur le Global Carbon Project pour la redaction du rapport annuel.
