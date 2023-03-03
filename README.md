@@ -39,3 +39,5 @@ Nous avons trouvé plusieurs sites utilisant ces données pour faire divers repr
 - Le [Global Carbon Budget](https://globalcarbonbudget.org/), repris [ici](https://essd.copernicus.org/articles/14/4811/2022/) dans la revue scientifique "Earth System Science Data" (ESSD) publiée par Copernicus Publications, s'appuie sur le Global Carbon Project pour la redaction du rapport annuel.
 - [Our World in Data](https://ourworldindata.org/explorers/co2) est un site mettant à disposition de nombreaux jeux de données sur notre monde. On y retrouvera alors nos données sur la quantité de CO2 émis par pays au fil des années de 1750 à 2021. 
 - [The Carbon Map](https://www.carbonmap.org/#intro), utilise les données que nous souhaitons intégrer à notre projet, en parallèle à d'autres, pour présenter une carte du monde interactive sous plusieurs aspects (population, émissions CO2, extractions, niveaux de la mer, etc...)
+
+Il existe probablement d'autres plateformes et recherches qui utilisent les mêmes données que nous. Il s'agit ici d'une liste non exhaustive.
