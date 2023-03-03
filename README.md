@@ -2,7 +2,7 @@
 ## Contexte
 *Contexte : d'où viennent les données, qui les a créées et dans quel contexte.*
 
-Nous avons trouvé les donnlées regoupées sur [GitHub](https://github.com/owid/co2-data).
+Nous avons trouvé les données regoupées sur [GitHub](https://github.com/owid/co2-data).
 
 Les données sur les émissions de CO2 et de gaz à effet de serre proviennent de la base de données Our World in Data. Cette base de données est mise à jour régulièrement et comprend des données sur les émissions de CO2 (annuelles, par habitant, cumulatives et basées sur la consommation), d'autres gaz à effet de serre, le mix énergétique et d'autres métriques pertinentes. 
 
