@@ -2,17 +2,17 @@
 ## Contexte
 *Contexte : d'où viennent les données, qui les a créées et dans quel contexte.*
 
-Nous avons trouvé les donnlées regoupées sur [GitHub](https://duckduckgo.com).
+Nous avons trouvé les donnlées regoupées sur [GitHub](https://github.com/owid/co2-data).
 
 Les données sur les émissions de CO2 et de gaz à effet de serre proviennent de la base de données Our World in Data. Cette base de données est mise à jour régulièrement et comprend des données sur les émissions de CO2 (annuelles, par habitant, cumulatives et basées sur la consommation), d'autres gaz à effet de serre, le mix énergétique et d'autres métriques pertinentes. 
 
-Ces données sont basées sur plusieurs sources, telles que la revue statistique de l'énergie mondiale de BP, les données internationales sur l'énergie de l'EIA, le Global Carbon Project, CAIT Climate Data Explorer, la base de données de l'Université de Groningen GGDC Maddison Project, Bolt et van Zanden, etc. Le code d'ingestion, de traitement et d'exportation est également fourni.
+Ces données sont basées sur plusieurs sources, telles que la revue statistique de l'énergie mondiale de BP, les [données internationales sur l'énergie de l'EIA](https://www.eia.gov/opendata/bulkfiles.php), le [Global Carbon Project](https://www.globalcarbonproject.org/), [CAIT Climate Data Explorer](https://www.climatewatchdata.org/data-explorer/historical-emissions), la [base de données de l'Université de Groningen GGDC Maddison Project](https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-project-database-2020), Bolt et van Zanden, etc. Le code d'ingestion, de traitement et d'exportation est également fourni.
 
 Enfin, un changelog est fourni pour suivre les mises à jour apportées aux données.
 ## Description
 *Description : Comment sont structurées les données ? Parler du format, des attributs et du type de données.*
 
-Sur [GitHub](https://duckduckgo.com), les donnlées sont disponibles au format CSV et XLSX sous la forme d'une ligne par localisation et année. De plus, elles sont disponbiles en version JSON structurées par pays avec un tableau de données annuelles.
+Sur [GitHub](https://github.com/owid/co2-data), les donnlées sont disponibles au format CSV et XLSX sous la forme d'une ligne par localisation et année. De plus, elles sont disponbiles en version JSON structurées par pays avec un tableau de données annuelles.
 
 Nous utiliserons probablement les données structurées en format JSON, qui est un format de données léger et facile à lire et écrire pour les humains. Le fichier contient plusieurs objets représentant les pays, avec chaque objet contenant une liste de données pour ce pays, triées par année.
 
