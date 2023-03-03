@@ -2,9 +2,11 @@
 ## Contexte
 *Contexte : d'où viennent les données, qui les a créées et dans quel contexte.*
 
-Le Global Carbon Project (GCP) est une organisation qui se consacre à l'étude et à l'intégration des connaissances sur les gaz à effet de serre émis par les activités humaines et le système terrestre. Depuis 2001, le GCP publie des estimations des émissions mondiales et nationales de CO2 fossile, qui sont disponibles sur Zenodo. Les données sont incluses dans un format absolu standard et per capita, accompagnées de fichiers de métadonnées au format JSON, ainsi qu'un fichier indiquant la source de chaque point de données. Les auteurs de l'article sur la méthodologie utilisée dans la version 2022 du jeu de données sur les émissions de CO2 fossile sont Andrew, Robbie M. et Peters, Glen P.
+Les données sur les émissions de CO2 et de gaz à effet de serre proviennent de la base de données Our World in Data. Cette base de données est mise à jour régulièrement et comprend des données sur les émissions de CO2 (annuelles, par habitant, cumulatives et basées sur la consommation), d'autres gaz à effet de serre, le mix énergétique et d'autres métriques pertinentes. Les fichiers CSV, XLSX et JSON contiennent un format de 1 ligne par localisation et année pour les fichiers CSV et XLSX, tandis que la version JSON est divisée par pays avec un tableau de données annuelles.
 
-Les projets du GCP incluent la création de budgets mondiaux pour les trois principaux gaz à effet de serre - le dioxyde de carbone, le méthane et l'oxyde nitreux - ainsi que des efforts complémentaires pour étudier les émissions urbaines, régionales, cumulatives et négatives. Le site Web de l'organisation est accessible à l'adresse suivante : https://www.globalcarbonproject.org/.
+Ces données sont basées sur plusieurs sources, telles que la revue statistique de l'énergie mondiale de BP, les données internationales sur l'énergie de l'EIA, le Global Carbon Project, CAIT Climate Data Explorer, la base de données de l'Université de Groningen GGDC Maddison Project, Bolt et van Zanden, etc. Le code d'ingestion, de traitement et d'exportation est également fourni.
+
+Enfin, un changelog est fourni pour suivre les mises à jour apportées aux données.
 ## Description
 *Description : Comment sont structurées les données ? Parler du format, des attributs et du type de données.*
 
