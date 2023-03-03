@@ -33,3 +33,6 @@ Nous voulons également ajouter des notifications pour les années clés qui sig
 Le but du projet est d'aider les utilisateurs à mieux comprendre comment les émissions de CO2 ont évolué au fil du temps et dans différentes parties du monde. Cela peut aider à sensibiliser les gens à l'importance de la réduction des émissions et de la protection de l'environnement.
 ## Références
 *Références : Qui d'autre dans le web ou dans la recherche a utilisé ces données ? Dans quel but ?*
+
+Nous avons trouvé plusieurs sites utilisant ces données pour faire divers représentations dont voici une liste :
+- [Global Carbon Atlas](http://www.globalcarbonatlas.org/en/CO2-emissions) : Ils ont utilisé ces données pour représenter graphiquement l'évolution de la quantité d'émission de CO2 produit par pays au fil des années de 1960 à 2021. Ils les présentent sous forme de carte, de diagramme ou encore de bulles. 
