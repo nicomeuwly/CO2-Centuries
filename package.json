@@ -1,0 +1,30 @@
+{
+  "name": "co-centuries",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^4.1.4"
+  },
+  "dependencies": {
+    "d3-fetch": "^3.0.1",
+    "d3-selection": "^3.0.0"
+  },
+  "description": "*Contexte : d'où viennent les données, qui les a créées et dans quel contexte.*",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicomeuwly/CO-Centuries.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicomeuwly/CO-Centuries/issues"
+  },
+  "homepage": "https://github.com/nicomeuwly/CO-Centuries#readme"
+}
