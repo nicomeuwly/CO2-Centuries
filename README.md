@@ -2,7 +2,9 @@
 ## Contexte
 *Contexte : d'où viennent les données, qui les a créées et dans quel contexte.*
 
-Les données sur les émissions de CO2 et de gaz à effet de serre proviennent de la base de données Our World in Data. Cette base de données est mise à jour régulièrement et comprend des données sur les émissions de CO2 (annuelles, par habitant, cumulatives et basées sur la consommation), d'autres gaz à effet de serre, le mix énergétique et d'autres métriques pertinentes. Les fichiers CSV, XLSX et JSON contiennent un format de 1 ligne par localisation et année pour les fichiers CSV et XLSX, tandis que la version JSON est divisée par pays avec un tableau de données annuelles.
+Nous avons trouvé les donnlées regoupées sur [GitHub](https://duckduckgo.com).
+
+Les données sur les émissions de CO2 et de gaz à effet de serre proviennent de la base de données Our World in Data. Cette base de données est mise à jour régulièrement et comprend des données sur les émissions de CO2 (annuelles, par habitant, cumulatives et basées sur la consommation), d'autres gaz à effet de serre, le mix énergétique et d'autres métriques pertinentes. 
 
 Ces données sont basées sur plusieurs sources, telles que la revue statistique de l'énergie mondiale de BP, les données internationales sur l'énergie de l'EIA, le Global Carbon Project, CAIT Climate Data Explorer, la base de données de l'Université de Groningen GGDC Maddison Project, Bolt et van Zanden, etc. Le code d'ingestion, de traitement et d'exportation est également fourni.
 
@@ -10,7 +12,9 @@ Enfin, un changelog est fourni pour suivre les mises à jour apportées aux donn
 ## Description
 *Description : Comment sont structurées les données ? Parler du format, des attributs et du type de données.*
 
-Les données sont structurées en format JSON (JavaScript Object Notation), qui est un format de données léger et facile à lire et écrire pour les humains. Le fichier contient plusieurs objets représentant les pays, avec chaque objet contenant une liste de données pour ce pays, triées par année.
+Sur [GitHub](https://duckduckgo.com), les donnlées sont disponibles au format CSV et XLSX sous la forme d'une ligne par localisation et année. De plus, elles sont disponbiles en version JSON structurées par pays avec un tableau de données annuelles.
+
+Nous utiliserons probablement les données structurées en format JSON, qui est un format de données léger et facile à lire et écrire pour les humains. Le fichier contient plusieurs objets représentant les pays, avec chaque objet contenant une liste de données pour ce pays, triées par année.
 
 Chaque objet de données pour un pays contient plusieurs attributs décrivant diverses mesures d'émissions de CO2, de population et d'utilisation du sol. Les attributs incluent l'année, la population, les émissions cumulatives de CO2 pour diverses sources telles que le charbon, le gaz et le pétrole, ainsi que les émissions dues à l'utilisation des terres.
 
