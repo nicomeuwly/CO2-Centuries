@@ -2,7 +2,7 @@
 ## Contexte
 *Contexte : d'où viennent les données, qui les a créées et dans quel contexte.*
 
-Nous avons trouvé les données regoupées sur [GitHub](https://github.com/owid/co2-data).
+Nous avons trouvé les données regroupées sur [GitHub](https://github.com/owid/co2-data).
 
 Les données sur les émissions de CO2 et de gaz à effet de serre proviennent de la base de données Our World in Data. Cette base de données est mise à jour régulièrement et comprend des données sur les émissions de CO2 (annuelles, par habitant, cumulatives et basées sur la consommation), d'autres gaz à effet de serre, le mix énergétique et d'autres métriques pertinentes. 
 
@@ -12,7 +12,7 @@ Enfin, un changelog est fourni pour suivre les mises à jour apportées aux donn
 ## Description
 *Description : Comment sont structurées les données ? Parler du format, des attributs et du type de données.*
 
-Sur [GitHub](https://github.com/owid/co2-data), les donnlées sont disponibles au format CSV et XLSX sous la forme d'une ligne par localisation et année. De plus, elles sont disponbiles en version JSON structurées par pays avec un tableau de données annuelles.
+Sur [GitHub](https://github.com/owid/co2-data), les données sont disponibles au format CSV et XLSX sous la forme d'une ligne par localisation et année. De plus, elles sont disponibles en version JSON structurées par pays avec un tableau de données annuelles.
 
 Nous utiliserons probablement les données structurées en format JSON, qui est un format de données léger et facile à lire et écrire pour les humains. Le fichier contient plusieurs objets représentant les pays, avec chaque objet contenant une liste de données pour ce pays, triées par année.
 
@@ -37,7 +37,7 @@ Le but du projet est d'aider les utilisateurs à mieux comprendre comment les é
 Nous avons trouvé plusieurs sites utilisant ces données pour faire divers représentations dont voici une liste :
 - Le [Global Carbon Atlas](http://www.globalcarbonatlas.org/en/CO2-emissions) utilise ces données pour représenter graphiquement l'évolution de la quantité d'émission de CO2 produit par pays au fil des années de 1960 à 2021. Ils les présentent sous forme de carte, de diagramme ou encore de bulles. 
 - Le [Global Carbon Budget](https://globalcarbonbudget.org/), repris [ici](https://essd.copernicus.org/articles/14/4811/2022/) dans la revue scientifique "Earth System Science Data" (ESSD) publiée par Copernicus Publications, s'appuie sur le Global Carbon Project pour la redaction du rapport annuel.
-- [Our World in Data](https://ourworldindata.org/explorers/co2) est un site mettant à disposition de nombreaux jeux de données sur notre monde. On y retrouvera alors nos données sur la quantité de CO2 émis par pays au fil des années de 1750 à 2021. 
+- [Our World in Data](https://ourworldindata.org/explorers/co2) est un site mettant à disposition de nombreux jeux de données sur notre monde. On y retrouvera alors nos données sur la quantité de CO2 émis par pays au fil des années de 1750 à 2021. 
 - [The Carbon Map](https://www.carbonmap.org/#intro), utilise les données que nous souhaitons intégrer à notre projet, en parallèle à d'autres, pour présenter une carte du monde interactive sous plusieurs aspects (population, émissions CO2, extractions, niveaux de la mer, etc...)
 
 Il existe probablement d'autres plateformes et recherches qui utilisent les mêmes données que nous. Il s'agit ici d'une liste non exhaustive.
