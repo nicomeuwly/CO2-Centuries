@@ -41,3 +41,6 @@ Nous avons trouvé plusieurs sites utilisant ces données pour faire divers repr
 - [The Carbon Map](https://www.carbonmap.org/#intro), utilise les données que nous souhaitons intégrer à notre projet, en parallèle à d'autres, pour présenter une carte du monde interactive sous plusieurs aspects (population, émissions CO2, extractions, niveaux de la mer, etc...)
 
 Il existe probablement d'autres plateformes et recherches qui utilisent les mêmes données que nous. Il s'agit ici d'une liste non exhaustive.
+## Wireframe
+A l'aide de Figma, nous avons réalisé des maquettes de ce à quoi devrait ressembler notre site. Il y a donc une carte au centre dont la couleur des pays va évoluer au fil des années en fonction de la quantité de CO2 émis par les pays. L'animation s'active lorsque l'utilisateur "scroll" sur la page. Ainsi les années défilent ainsi que l'animation sur la carte. 
+Grâce au [lien suivant](https://www.figma.com/proto/TxOMH3pwH7772CqtHLDvks/VisualDon---Wireframes?page-id=0%3A1&node-id=8-2410&viewport=783%2C305%2C0.35&scaling=scale-down&starting-point-node-id=8%3A2410), nous pouvons voir nos maquettes ainsi qu'un prototype pour montrer les différentes intéractions. 
