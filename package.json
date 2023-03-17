@@ -12,8 +12,10 @@
     "vite": "^4.1.4"
   },
   "dependencies": {
+    "d3": "^7.8.2",
     "d3-fetch": "^3.0.1",
-    "d3-selection": "^3.0.0"
+    "d3-selection": "^3.0.0",
+    "topojson-client": "^3.1.0"
   },
   "description": "*Contexte : d'où viennent les données, qui les a créées et dans quel contexte.*",
   "main": "index.js",

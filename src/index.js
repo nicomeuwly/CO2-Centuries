@@ -1,6 +1,6 @@
-// import {select} from "d3-selection";
+import * as d3 from "d3";
 // import { xml } from 'd3-fetch';
-
+import * as topojson from "topojson-client";
 
 const progressBar = document.querySelector('.progress-bar')
 const yearCont = document.querySelector('.year')
@@ -9,6 +9,36 @@ const loadingContainer = document.querySelector('.loading-container')
 let min = 1750
 let max = 2021
 
+const width = window.innerWidth-150;
+const height = window.innerHeight-180;
+
+const svg = d3.select(".map-container")
+  .append("svg")
+  .attr("width", width)
+  .attr("height", height);
+
+const projection = d3
+  .geoMercator()
+  .scale(130)
+  .translate([width / 2, height / 1.7]);
+const path = d3.geoPath(projection);
+
+const g = svg.append("g");
+
+d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json").then(
+  (data) => {
+    const countries = topojson.feature(data, data.objects.countries);
+    g.selectAll("path")
+      .data(countries.features)
+      .enter()
+      .append("path")
+      .attr(
+        "class",
+        (d) => "country " + d.properties.name.toLowerCase().replace(/ /g, "-")
+      )
+      .attr("d", path);
+  }
+);
 
 const getMinMaxYear = (data) => {
   let minYear = Infinity;
