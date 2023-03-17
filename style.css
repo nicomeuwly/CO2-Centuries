@@ -13,15 +13,62 @@
 }
 html, body {
     width: 100%;
-    height: 10000px;
+    height: calc(100vh + 10000px);
 }
 html::-webkit-scrollbar {
     display: none;
-  }
+}
 html {
     -ms-overflow-style: none;  
     scrollbar-width: none;  
-  }
+}
+.loading-container {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--black);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.spinner {
+    width: 56px;
+    height: 56px;
+    display: grid;
+    border: 4.5px solid var(--black);
+    border-radius: 50%;
+    border-color: var(--white) var(--black);
+    animation: spinner-e04l1k 1s infinite linear;
+}
+.spinner::before,
+.spinner::after {
+    content: "";
+    grid-area: 1/1;
+    margin: 2.2px;
+    border: inherit;
+    border-radius: 50%;
+}
+.spinner::before {
+    border-color: var(--blue) var(--black);
+    animation: inherit;
+    animation-duration: 0.5s;
+    animation-direction: reverse;
+}
+
+.spinner::after {
+    margin: 8.9px;
+}
+
+@keyframes spinner-e04l1k {
+    100% {
+      transform: rotate(1turn);
+    }
+}
+   
 .main-container {
     width: 100%;
     height: 100vh;
@@ -89,6 +136,7 @@ html {
     height: 25px;
     background-color: var(--white);
     border-radius: 100px;
+    overflow: hidden;
 }
 .progress-bar {
     width: 0%;

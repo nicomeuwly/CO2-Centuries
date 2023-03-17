@@ -1,33 +1,62 @@
 // import {select} from "d3-selection";
 // import { xml } from 'd3-fetch';
 
+
 const progressBar = document.querySelector('.progress-bar')
 const yearCont = document.querySelector('.year')
+const loadingContainer = document.querySelector('.loading-container')
 
-// const jsonData = require('../owid-co2-data.json');
+const xhr = new XMLHttpRequest();
+xhr.open('GET', '../owid-co2-data.json', true);
+xhr.addEventListener('loadstart', function() {
+  loadingContainer.style.display = 'flex'
+});
+
+xhr.addEventListener('load', function() {
+  loadingContainer.style.display = 'none'
+});
+
+xhr.onreadystatechange = function() {
+  if (xhr.readyState === 4 && xhr.status === 200) {
+    const json = JSON.parse(xhr.responseText);
+    console.log(json);
+  }
+};
+xhr.send();
+
+
+
+
+
+// fetch('../owid-co2-data.json')
+//   .then(response => response.json())
+//   .then(jsonData => {
+//     let minDate = Infinity;
+//     let maxDate = -Infinity;
+//     for (const countryName in jsonData) {
+//       const countryData = jsonData[countryName];
+//       for (const dataPoint of countryData.data) {
+//         const year = dataPoint.year;
+//         if (year < minDate) {
+//           minDate = year;
+//         }
+//         if (year > maxDate) {
+//           maxDate = year;
+//         }
+//       }
+//     }
+// });
 
 // // Variables pour stocker les dates les plus petites et les plus grandes
-// let minDate = Infinity;
-// let maxDate = -Infinity;
+// 
 
 // // Parcourir tous les pays et toutes les années pour trouver les dates les plus petites et les plus grandes
-// for (const countryName in jsonData) {
-//   const countryData = jsonData[countryName];
-//   for (const dataPoint of countryData.data) {
-//     const year = dataPoint.year;
-//     if (year < minDate) {
-//       minDate = year;
-//     }
-//     if (year > maxDate) {
-//       maxDate = year;
-//     }
-//   }
-// }
 
 const MIN = 1750
 const MAX = 2021
 
 const TOT = MAX - MIN
+
 
 const handleScroll = () => {
   const height = document.body.scrollHeight
@@ -49,6 +78,8 @@ window.addEventListener('scroll', handleScroll)
 
 
 
+
+
 // xml("world.svg").then(function(svg) {
 //     // Sélectionner le contenu du fichier SVG
 //     const importedSVG = document.importNode(svg.documentElement, true);
@@ -59,7 +90,7 @@ window.addEventListener('scroll', handleScroll)
 //     // updateSvg();
 
 //     const us = select("#USA");
-//     us.selectAll('path').attr("fill", "red");
+//     us.attr("fill", "red")
 //   });
 
 
