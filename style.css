@@ -235,6 +235,12 @@ html {
     fill: var(--white);
     stroke: var(--black);
 }
+.current {
+    fill: var(--blue)
+}
+.old {
+    fill: var(--black);
+}
 .progress-container {
     width: 100%;
     height: 80px;

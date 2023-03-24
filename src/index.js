@@ -58,7 +58,6 @@ cover.addEventListener('click', function(e) {
   cover.dataset.cover = "false"
 })
 close.addEventListener('click', function() {
-  // alert('test')
   cover.dataset.cover = "false"
 })
 
@@ -90,6 +89,32 @@ d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(
       .attr('d', path)
   }
 );
+
+const placePointer = (coordinates) => {
+  // Change the old current pointer clas for color
+  d3.select('.current').attr("class", 'old')
+
+  // Insert new pointer
+  svg.append("circle")
+    .attr("cx", projection(coordinates)[0])
+    .attr("cy", projection(coordinates)[1])
+    .attr("r", 5)
+    .attr("class", 'current')
+}
+
+
+const bern = [7.4446085, 46.9479222]
+const london = [-0.1277583, 51.5073509]
+const tokyo = [139.691706, 35.689487]
+
+
+placePointer(bern)
+placePointer(london)
+placePointer(tokyo)
+
+
+
+
 
 // ########################################### ____ GET COLOR FROM CO2 
 const generateColor = (val) => {
@@ -186,7 +211,6 @@ const handleScroll = () => {
   yearCont.innerText = year
 
   changeColors(year)
-
 }
 // ########################################### ____ INITIALIZE VARS
 const main = (data) => {
