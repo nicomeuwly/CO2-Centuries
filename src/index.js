@@ -146,15 +146,20 @@ const placePointer = (event) => {
   d3.select('.current').attr("class", 'old')
   const coordinates = [event.long, event.lat]
   // Insert new pointer
-  svg.append("circle")
-    .attr("cx", projection(coordinates)[0])
-    .attr("cy", projection(coordinates)[1])
-    .attr("r", 5)
-    .attr("id", 'p-' + event.id)
-    .attr("class", 'current')
-    .on('click', function() {
-      displayCover(event.text)
-    })
+  d3.xml("../ressources/position.svg").then((data) => {
+    svg
+      .node()
+      .appendChild(data.documentElement)
+      .attr("scale", 10)
+      .attr("x", projection(coordinates)[0])
+      .attr("y", projection(coordinates)[1])
+      .attr("id", "p-" + event.id)
+      .attr("class", "current")
+      .on("click", function () {
+        displayCover(event.text);
+      });
+  });
+  
 }
 
 
