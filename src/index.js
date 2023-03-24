@@ -47,6 +47,11 @@ d3.xml('../ressources/infos.svg').then(
     infosPict.node().appendChild(data.documentElement)
   }
 )
+let positionPict
+d3.xml("../ressources/position.svg").then((data) => {
+  positionPict = data.documentElement
+  // console.log(positionPict)
+})
 let events
 
 const displayCover = (inf) => {
@@ -140,35 +145,26 @@ d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(
 const placePointer = (event) => {
   // Change the old current pointer clas for color
   if (document.querySelector('#p-' + event.id)) return
-  console.log('test')
   d3.select('.current').attr("class", 'old')
   const coordinates = [event.long, event.lat]
   // Insert new pointer
-  d3.xml("../ressources/position.svg").then((data) => {
-    svg
-      .node()
-      .appendChild(data.documentElement)
-      .attr("scale", 10)
-      .attr("x", projection(coordinates)[0])
-      .attr("y", projection(coordinates)[1])
+  // d3.xml("../ressources/position.svg").then((data) => {
+    svg.append('svg')
+      .attr('width', 30)
+      .attr('height', 30)
+      .attr("x", projection(coordinates)[0]-15)
+      .attr("y", projection(coordinates)[1]-25)
       .attr("id", "p-" + event.id)
       .attr("class", "current")
       .on("click", function () {
         displayCover(event.text);
-      });
-  });
+      })
+      .node()
+      .appendChild(positionPict)
+      
   
 }
 
-
-// const bern = [7.4446085, 46.9479222]
-// const london = [-0.1277583, 51.5073509]
-// const tokyo = [139.691706, 35.689487]
-
-
-// placePointer(bern)
-// placePointer(london)
-// placePointer(tokyo)
 
 // ########################################### ____ GET COLOR FROM CO2 
 const generateColor = (val) => {
