@@ -153,10 +153,6 @@ placePointer(bern)
 placePointer(london)
 placePointer(tokyo)
 
-
-
-
-
 // ########################################### ____ GET COLOR FROM CO2 
 const generateColor = (val) => {
   
