@@ -49,8 +49,6 @@ d3.xml('../ressources/infos.svg').then(
 )
 let events
 
-
-
 const displayCover = (inf) => {
   cover.dataset.cover = "true"
   det.innerHTML = inf
