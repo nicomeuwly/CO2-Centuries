@@ -192,7 +192,6 @@ html {
     flex-wrap: wrap;
     justify-content: flex-start;
     overflow: hidden;
-    /* background: linear-gradient(0deg, var(--white) 0%, var(--yellow) 33%, var(--red) 100%); */
 }
 .legg {
     width: 100%;
@@ -241,6 +240,9 @@ html {
 }
 .old {
     fill: var(--blue-dark);
+}
+.current:hover, .old:hover {
+    cursor: pointer;
 }
 .progress-container {
     width: 100%;

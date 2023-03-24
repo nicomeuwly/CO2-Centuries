@@ -17,6 +17,12 @@ const height = window.innerHeight - 180
 
 let coData = {}
 
+d3.json('../data/events.json').then(
+  (data) => {
+    events = data
+  }
+)
+
 const colors = {
   1: '#f8e08a',
   2: '#f5d872',
@@ -41,6 +47,8 @@ d3.xml('../ressources/infos.svg').then(
     infosPict.node().appendChild(data.documentElement)
   }
 )
+let events
+
 
 
 const displayCover = (inf) => {
@@ -131,27 +139,33 @@ d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(
   }
 );
 
-const placePointer = (coordinates) => {
+const placePointer = (event) => {
   // Change the old current pointer clas for color
+  if (document.querySelector('#p-' + event.id)) return
+  console.log('test')
   d3.select('.current').attr("class", 'old')
-
+  const coordinates = [event.long, event.lat]
   // Insert new pointer
   svg.append("circle")
     .attr("cx", projection(coordinates)[0])
     .attr("cy", projection(coordinates)[1])
     .attr("r", 5)
+    .attr("id", 'p-' + event.id)
     .attr("class", 'current')
+    .on('click', function() {
+      displayCover(event.text)
+    })
 }
 
 
-const bern = [7.4446085, 46.9479222]
-const london = [-0.1277583, 51.5073509]
-const tokyo = [139.691706, 35.689487]
+// const bern = [7.4446085, 46.9479222]
+// const london = [-0.1277583, 51.5073509]
+// const tokyo = [139.691706, 35.689487]
 
 
-placePointer(bern)
-placePointer(london)
-placePointer(tokyo)
+// placePointer(bern)
+// placePointer(london)
+// placePointer(tokyo)
 
 // ########################################### ____ GET COLOR FROM CO2 
 const generateColor = (val) => {
@@ -249,6 +263,11 @@ const handleScroll = () => {
   yearCont.innerText = year
 
   changeColors(year)
+  if (events[year]) {
+    const event = events[year]
+    placePointer(event)
+    // placePointer([event.long, event.lat], event.text)
+  } 
 }
 // ########################################### ____ INITIALIZE VARS
 const main = (data) => {
@@ -261,10 +280,11 @@ const main = (data) => {
 
 // ########################################### ____ DATA LOADING & LOADER MANAG.
 const xhr = new XMLHttpRequest();
-xhr.open('GET', '../fichier_updated.json', true)
+xhr.open('GET', '../data/countries_data.json', true)
 xhr.addEventListener('loadstart', function() {
   loadingContainer.style.display = 'flex'
 });
+
 
 xhr.addEventListener('load', function() {
   loadingContainer.style.display = 'none'
