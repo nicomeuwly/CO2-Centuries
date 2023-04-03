@@ -3,6 +3,7 @@ import { projection, map} from './map'
 
 const cover = document.querySelector('.cover')
 const close = document.querySelector('.close')
+const det = document.querySelector('.det')
 
 let events
 
@@ -54,7 +55,8 @@ const placePointer = (event) => {
         .attr("transform", "scale(0.3)")
   
     const messageCont = document.querySelector('.message-cont')
-  
+    
+    // Insert new alert of the event
     const message = `<div id=ms-${event.id} class="message" data-active="true">
       <h2>${event.title}</h2>
       <p>${event.date}</p>
@@ -62,10 +64,12 @@ const placePointer = (event) => {
   
     messageCont.insertAdjacentHTML('afterbegin', message)
     
+    // Click event (more details)
     document.querySelector(`#ms-${event.id}`).addEventListener('click', function() {
       displayCover(event.text)
     })
-  
+    
+    // Alert desapear after 5 sec
     setTimeout(() => {
       document.querySelector(`#ms-${event.id}`).dataset.active = "false"
     }, 5000);
