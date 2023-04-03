@@ -3,6 +3,7 @@
     --white: #F4F4F4;
     --blue: #1FB1A9;
     --blue-op: #1FB1A9aa;
+    --blue-dark-op: #0f4f4caa;
     --blue-dark: #0f4f4c;
     --legg-10: #f8e08a;
     --legg-20: #f5d872;
@@ -270,4 +271,63 @@ html {
     height: 100%;
     background-color: var(--blue);
     border-radius: 100px;
+}
+
+@keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+@keyframes disappear {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+}
+
+.message-cont {
+    position: fixed;
+    z-index: 1000;
+    top: 60px;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+}
+.message {
+    padding: 10px 40px;
+    background-color: var(--blue-op);
+    
+    border-radius: 15px;
+}
+.message h2 {
+    font-size: 15px;
+    color: var(--white);
+}
+.message p {
+    font-size: 12px;
+    color: var(--white);
+}
+
+.message:hover {
+    background-color: var(--blue);
+    cursor: pointer;
+}
+
+[data-active="true"] {
+    animation-name: appear;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+[data-active="false"] {
+    animation-name: disappear;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
