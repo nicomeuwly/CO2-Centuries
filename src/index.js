@@ -32,7 +32,6 @@ infos.addEventListener('click', function() {
   displayCover(inf)
 })
 
-
 // ########################################### ____ MIN AND MAX DATE FOR SCROLL
 const getMinMax = (data) => {
   let minYear = Infinity
