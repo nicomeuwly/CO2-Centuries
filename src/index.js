@@ -17,6 +17,8 @@ const height = window.innerHeight - 180
 
 let coData = {}
 
+let events
+
 d3.json('../data/events.json').then(
   (data) => {
     events = data
@@ -52,7 +54,7 @@ d3.xml("../ressources/position.svg").then((data) => {
   positionPict = data.documentElement
   // console.log(positionPict)
 })
-let events
+
 
 const displayCover = (inf) => {
   cover.dataset.cover = "true"
@@ -161,8 +163,6 @@ const placePointer = (event) => {
       })
       .node()
       .appendChild(positionPict)
-      
-  
 }
 
 
