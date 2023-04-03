@@ -5,13 +5,16 @@ import { getCO2 } from './co2'
 
 const yearCont = document.querySelector('.year')
 
+// Window width and height without padding and header + footer
 const width = window.innerWidth - 150
 const height = window.innerHeight - 180
 
+// Vars for export
 let projection
 let map
 
 const setMap = (coData) => {
+    // Set the svg element
     const svg = d3.select('.map-container')
         .append('svg')
         .attr('width', width)

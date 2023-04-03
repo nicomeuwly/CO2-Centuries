@@ -7,13 +7,12 @@ const progressBar = document.querySelector('.progress-bar')
 const yearCont = document.querySelector('.year')
 const loadingContainer = document.querySelector('.loading-container')
 const infos = document.querySelector('.infos')
+const start = document.querySelector('.start')
 
 let minYear = 1750
 let maxYear = 2021
 
 let coData = {}
-
-
 
 // ########################################### ____ INFOS 
 const infosPict = d3.select('.infos')
@@ -60,6 +59,9 @@ const getMinMax = (data) => {
 }
 // ########################################### ____ SCROLL MAMAGEMENT
 const handleScroll = () => {
+  if (start.dataset.started = "false") {
+    start.dataset.started = "true"
+  }
   const tot = maxYear - minYear
   const height = document.body.scrollHeight
   const windowHeight = window.innerHeight
@@ -78,7 +80,7 @@ const handleScroll = () => {
   if (events[year]) {
     const event = events[year]
     placePointer(event)
-    // placePointer([event.long, event.lat], event.text)
+    
   } 
 }
 

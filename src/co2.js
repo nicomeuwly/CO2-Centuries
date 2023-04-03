@@ -11,6 +11,7 @@ const colors = {
     10: '#703838'
 }
 
+// ########################################### ____ GET CO2 FROM YEAR
 const getCO2 = (data, year) => {
     const dataForYear = data.find((d) => d.year === year);
     return dataForYear ? dataForYear.co2 : null;
@@ -45,7 +46,7 @@ const generateColor = (val) => {
     return color
   }
   
-  // ########################################### ____ CHANGE MAP COLOR
+// ########################################### ____ CHANGE MAP COLOR
 const changeColors = (year, coData) => {
   
   for (const country in coData) {

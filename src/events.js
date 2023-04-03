@@ -7,25 +7,29 @@ const det = document.querySelector('.det')
 
 let events
 
+// Events data load
 d3.json('../data/events.json').then(
     (data) => {
       events = data
     }
 )
   
-
+// Pointer path
 const positionPict = "M50,12.55c-15.42,0-27.91,12.5-27.91,27.91c0,19.15,19.35,40.44,26.41,46.44c0.87,0.74,2.14,0.74,3.01,0  c7.06-6,26.41-27.29,26.41-46.44C77.91,25.04,65.42,12.55,50,12.55z M50,58.1c-9.27,0-16.78-7.51-16.78-16.78  c0-9.27,7.51-16.78,16.78-16.78s16.78,7.51,16.78,16.78C66.78,50.59,59.27,58.1,50,58.1z"
 
+// Display event details
 const displayCover = (inf) => {
     cover.dataset.cover = "true"
     det.innerHTML = inf
 }
 
+// Close from clicking on the cover
 cover.addEventListener('click', function(e) {
     if (e.target.classList != 'cover') return
     cover.dataset.cover = "false"
 })
 
+// Close from clicking on button
 close.addEventListener('click', function() {
     cover.dataset.cover = "false"
 })
@@ -47,6 +51,7 @@ const placePointer = (event) => {
         .attr("y", projection(coordinates)[1]-25)
         .attr("id", "p-" + event.id)
         .attr("class", "current")
+        // Click on the pointer dunction
         .on("click", function () {
           displayCover(event.text)
         })
