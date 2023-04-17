@@ -7,6 +7,7 @@
     --blue-op: #1FB1A9aa;
     --blue-dark-op: #0f4f4caa;
     --blue-dark: #2d6764;
+    --transparent: #fff0;
     --legg-10: #f8e08a;
     --legg-20: #f5d872;
     --legg-30: #e9ca5c;
@@ -104,6 +105,14 @@ html {
       top: -100vh;
     }
 }
+@keyframes ender {
+    0% {
+      top: -100vh;
+    }
+    100% {
+      top: 0;
+    }
+}
 .start {
     width: 100%;
     height: 100%;
@@ -120,7 +129,65 @@ html {
     text-align: center;
     color: var(--blue)
 }
+.end {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 998;
+    background-color: var(--blue-op);
+    display: flex;
+    top: -100vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+.end h2 {
+    font-size: 100px;
+    text-align: left;
+    color: var(--white);
+    margin-top: 100px;
+}
+.end .linksCont {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: -100px;
+}
+.end .linksCont button {
+    padding: 20px 50px;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0 50px;
+    border: none;
+    border-radius: 10px;
+    border: solid 5px var(--white);
+}
+.end .linksCont button:hover {
+    cursor: pointer;
+    scale: 1.02;
+}
+.restart {
+    color: var(--white);
+    background-color: var(--transparent);
+}
+.ready {
+    color: var(--blue);
+    background-color: var(--white);
+}
+
 [data-started="true"] {
+    animation-name: starter;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+}
+[data-notended="false"] {
+    animation-name: ender;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+}
+[data-notended="true"] {
     animation-name: starter;
     animation-duration: 0.7s;
     animation-fill-mode: forwards;

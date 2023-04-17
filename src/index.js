@@ -8,6 +8,7 @@ const yearCont = document.querySelector('.year')
 const loadingContainer = document.querySelector('.loading-container')
 const infos = document.querySelector('.infos')
 const start = document.querySelector('.start')
+const end = document.querySelector('.end')
 
 let minYear = 1750
 let maxYear = 2021
@@ -79,8 +80,15 @@ const handleScroll = () => {
   if (events[year]) {
     const event = events[year]
     placePointer(event)
-    
   } 
+
+  if (year == maxYear) {
+    // setTimeout(() => {
+      end.dataset.notended = "false"
+    // }, 3000)
+  } else {
+    end.dataset.notended = "true"
+  }
 }
 
 // ########################################### ____ INITIALIZE VARS
