@@ -9,6 +9,8 @@ const loadingContainer = document.querySelector('.loading-container')
 const infos = document.querySelector('.infos')
 const start = document.querySelector('.start')
 const end = document.querySelector('.end')
+const restart = document.querySelector('.restart')
+const ready = document.querySelector('.ready')
 
 let minYear = 1750
 let maxYear = 2021
@@ -83,9 +85,9 @@ const handleScroll = () => {
   } 
 
   if (year == maxYear) {
-    // setTimeout(() => {
+    setTimeout(() => {
       end.dataset.notended = "false"
-    // }, 3000)
+    }, 500)
   } else {
     end.dataset.notended = "true"
   }
@@ -107,6 +109,12 @@ xhr.addEventListener('loadstart', function() {
   loadingContainer.style.display = 'flex'
 });
 
+restart.addEventListener('click', function() {
+  window.location.href = 'index.html'
+})
+ready.addEventListener('click', function() {
+  window.location.href = 'new-view.html'
+})
 
 xhr.addEventListener('load', function() {
   setMap(coData)
