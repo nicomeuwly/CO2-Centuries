@@ -9,6 +9,8 @@ const yearCont = document.querySelector('.year')
 const width = window.innerWidth - 150
 const height = window.innerHeight - 180
 
+const body = document.querySelector("body")
+
 // Vars for export
 let projection
 let map
@@ -45,7 +47,7 @@ const setMap = (coData) => {
             .attr("class", (d) => "country id-" + d.id)
             .attr("d", path)
             .on("mouseover", function (event, d) {
-                const [x, y] = d3.pointer(event);
+                let [x, y] = d3.pointer(event);
                 const countryName = d.properties.name;
                 let valueCO2 = "No data"
                 const dataForCountry = Object.values(coData).find(
@@ -54,28 +56,39 @@ const setMap = (coData) => {
                 valueCO2 = getCO2(dataForCountry, parseInt(yearCont.innerText));
                 if (!valueCO2) {
                 valueCO2 = "No data";
+                } else {
+                    valueCO2 = +valueCO2.toFixed(3)
+                    if(valueCO2>1){
+                        valueCO2 += " Millions tons of CO2"
+                    } else {
+                        valueCO2 += " Million tons of CO2";
+                    }
                 }
-
+                
+                if(y > 550){
+                    y = 550;
+                }
                 svg.append("rect")
                 .attr("x", x)
                 .attr("y", y)
                 .attr("width", 250)
                 .attr("height", 50)
                 .attr("id", "box")
-                .style("fill", "white")
-                .style("stroke", "black");
+                .style("fill", "var(--blue)")
 
                 svg.append("text")
-                .attr("x", x + 20)
-                .attr("y", y + 14)
+                .attr("x", x + 10)
+                .attr("y", y + 20)
                 .text(countryName)
-                .style("text-anchor", "left");
+                .style("text-anchor", "left")
+                .style("font-weight", "bold");
 
-                svg.append("text")
-                .attr("x", x + 20)
-                .attr("y", y + 30)
-                .text(valueCO2)
-                .style("text-anchor", "left");
+                svg
+                  .append("text")
+                  .attr("x", x + 10)
+                  .attr("y", y + 40)
+                  .text(valueCO2)
+                  .style("text-anchor", "left");
             })
             .on("mouseout", function () {
                 // Supprimer l'onglet

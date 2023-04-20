@@ -376,6 +376,9 @@ html {
 .current:hover, .old:hover {
     cursor: pointer;
 }
+text {
+    fill: var(--white);
+}
 /* #############################______ PROGRESSION SECTION */
 .progress-container {
     width: 100%;
