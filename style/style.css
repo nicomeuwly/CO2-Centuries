@@ -293,24 +293,28 @@ html {
     justify-content: space-between;
     align-items: center;
     padding: 0 50px;
-    background-color: var(--white);
+    border-bottom: solid 2px var(--white);
 }
-.header h1, .header h2, .header h3 {
+.header h1 {
     font-size: 20px;
+    color: var(--white);
+}
+.header img {
+    height: 70%;
 }
 .infos {
     border: none;
-    background-color: var(--white);
+    background-color: var(--black);
 }
 .infos:hover {
     cursor: pointer;
 }
 .infos svg {
-    fill: var(--black);
+    fill: var(--white);
 }
 .infos:hover svg {
     fill: var(--blue);
-}
+}   
 /* #############################______ LEGEND BAR */
 .leg-bar {
     width: 50px;
