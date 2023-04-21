@@ -78,15 +78,12 @@ const changeColors = (year, coData) => {
 }
 
 const changeColorsPop = (year, coData) => {
-  let d = [];
   for (const country in coData) {
     if (coData.hasOwnProperty(country)) {
-      const dataForCountry = coData[country].data;
+      const dataForCountry = coData[country].data
       const id = coData[country].id
       
       let value = getCO2Pop(dataForCountry, year)
-
-      d.push(value)
       const count = document.querySelector('.id-' + id)
 
       let color
