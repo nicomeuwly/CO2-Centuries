@@ -139,7 +139,7 @@ if (path == '/') {
 
   // ########################################### ____ FINAL SECTION BUTTONS
   restart.addEventListener('click', function() {
-    window.location.href = 'index.html'
+    window.location.href = '/'
   })
   ready.addEventListener('click', function() {
     window.location.href = 'new-view.html'
