@@ -8,7 +8,7 @@ const det = document.querySelector('.det')
 let events
 
 // Events data load
-d3.json('../data/events.json').then(
+d3.json('./data/events.json').then(
     (data) => {
       events = data
     }

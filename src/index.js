@@ -25,7 +25,7 @@ const infosPict = d3.select('.infos')
   .attr('width', 30)
   .attr('height', 30)
 
-d3.xml('../ressources/infos.svg').then(
+d3.xml('./ressources/infos.svg').then(
   (data) => {
     infosPict.node().appendChild(data.documentElement)
   }
@@ -110,7 +110,8 @@ const main = (data) => {
 
 // ########################################### ____ DATA LOADING & LOADER MANAG.
 const xhr = new XMLHttpRequest();
-xhr.open('GET', '../data/countries_data.json', true)
+xhr.open('GET', './data/countries_data.json', true)
+
 xhr.addEventListener('loadstart', function() {
   loadingContainer.style.display = 'flex'
 });
