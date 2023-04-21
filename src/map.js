@@ -1,7 +1,7 @@
 import * as d3 from 'd3'
 import * as topojson from 'topojson-client'
 
-import { getCO2 } from './co2'
+import { getCO2, getCO2Pop } from './co2'
 
 const yearCont = document.querySelector('.year')
 
@@ -53,7 +53,12 @@ const setMap = (coData) => {
                 const dataForCountry = Object.values(coData).find(
                 (dat) => dat.id === d.id
                 ).data;
-                valueCO2 = getCO2(dataForCountry, parseInt(yearCont.innerText));
+                if(path == "/"){
+                    valueCO2 = getCO2(dataForCountry, parseInt(yearCont.innerText));
+                } else {
+                    valueCO2 = getCO2Pop(dataForCountry, parseInt(yearCont.innerText)
+                    );
+                }
                 if (!valueCO2) {
                 valueCO2 = "No data";
                 } else {
