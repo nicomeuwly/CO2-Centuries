@@ -20,6 +20,7 @@ const positionPict = "M50,12.55c-15.42,0-27.91,12.5-27.91,27.91c0,19.15,19.35,40
 // Display event details
 const displayCover = (inf) => {
     cover.dataset.cover = "true"
+    det.scrollTop = 0;
     det.innerHTML = inf
 }
 
