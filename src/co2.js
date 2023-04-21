@@ -19,7 +19,7 @@ const getCO2 = (data, year) => {
 
 const getCO2Pop = (data, year) => {
   const dataForYear = data.find((d) => d.year === year);
-  return dataForYear ? dataForYear.co2 / dataForYear.population : null;
+  return dataForYear ? dataForYear.co2 / dataForYear.population * 1000 : null;
 }
 
 // ########################################### ____ GET COLOR FROM CO2 
@@ -100,4 +100,4 @@ const changeColorsPop = (year, coData) => {
   }
 }
 
-export { getCO2, changeColors, changeColorsPop }
+export { getCO2, getCO2Pop, changeColors, changeColorsPop }
