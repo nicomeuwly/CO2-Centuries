@@ -64,11 +64,11 @@ const setMap = (coData, filePath) => {
                     if(valueCO2>1){
                         filePath == "/"
                           ? (valueCO2 += " Millions tons of CO2")
-                          : (valueCO2 += " Tons of CO2 per resident");
+                          : (valueCO2 += " Tons of CO2 per capita");
                     } else {
                         filePath == "/"
                           ? (valueCO2 += " Million tons of CO2")
-                          : (valueCO2 += " Ton of CO2 per resident");
+                          : (valueCO2 += " Ton of CO2 per capita");
                     }
                 }
                 
