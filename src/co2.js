@@ -17,6 +17,11 @@ const getCO2 = (data, year) => {
     return dataForYear ? dataForYear.co2 : null;
 }
 
+const getCO2Pop = (data, year) => {
+  const dataForYear = data.find((d) => d.year === year);
+  return dataForYear ? dataForYear.co2 / dataForYear.population : null;
+}
+
 // ########################################### ____ GET COLOR FROM CO2 
 const generateColor = (val) => {
     let color
@@ -72,4 +77,30 @@ const changeColors = (year, coData) => {
   }
 }
 
-export { getCO2, changeColors }
+const changeColorsPop = (year, coData) => {
+  let d = [];
+  for (const country in coData) {
+    if (coData.hasOwnProperty(country)) {
+      const dataForCountry = coData[country].data;
+      const id = coData[country].id
+      
+      let value = getCO2Pop(dataForCountry, year)
+
+      d.push(value)
+      const count = document.querySelector('.id-' + id)
+
+      let color
+      if (value) {
+        color = generateColor(value);    
+      } else {
+        color = '#F4F4F4'
+      }
+      if (count) {
+        count.style.fill = color
+        console.log(value)  
+      }
+    }
+  }
+}
+
+export { getCO2, changeColors, changeColorsPop }

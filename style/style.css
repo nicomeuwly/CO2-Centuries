@@ -407,6 +407,10 @@ text {
     background-color: var(--blue);
     border-radius: 100px;
 }
+[data-en="true"] {
+    width: 100%;
+    background-color: var(--gray);
+}
 /* #############################______ ALERTS */
 @keyframes appear {
     0% {

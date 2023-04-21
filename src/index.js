@@ -1,7 +1,7 @@
 import * as d3 from 'd3'
 import { displayCover, placePointer, events } from './events'
 import { setMap } from './map'
-import {  changeColors } from './co2'
+import {  changeColors, changeColorsPop } from './co2'
 
 const progressBar = document.querySelector('.progress-bar')
 const yearCont = document.querySelector('.year')
@@ -16,6 +16,8 @@ let minYear = 1750
 let maxYear = 2021
 
 let coData = {}
+
+const path = window.location.pathname;
 
 // ########################################### ____ INFOS 
 const infosPict = d3.select('.infos')
@@ -100,6 +102,10 @@ const main = (data) => {
   const minAndMax = getMinMax(data)
   minYear = minAndMax.minYear
   maxYear = minAndMax.maxYear
+
+  if (path == '/new-view.html') {
+    yearCont.innerText = maxYear
+  }
 }
 
 // ########################################### ____ DATA LOADING & LOADER MANAG.
@@ -109,17 +115,11 @@ xhr.addEventListener('loadstart', function() {
   loadingContainer.style.display = 'flex'
 });
 
-restart.addEventListener('click', function() {
-  window.location.href = 'index.html'
-})
-ready.addEventListener('click', function() {
-  window.location.href = 'new-view.html'
-})
-
 xhr.addEventListener('load', function() {
   setMap(coData)
   setTimeout(() => {
     loadingContainer.style.display = 'none'
+    changeColorsPop(maxYear, coData)
   }, 3000);
 });
 
@@ -131,4 +131,15 @@ xhr.onreadystatechange = function() {
 }
 xhr.send();
 
-window.addEventListener('scroll', handleScroll)
+
+if (path == '/') {
+  window.addEventListener('scroll', handleScroll)
+
+  // ########################################### ____ FINAL SECTION BUTTONS
+  restart.addEventListener('click', function() {
+    window.location.href = 'index.html'
+  })
+  ready.addEventListener('click', function() {
+    window.location.href = 'new-view.html'
+  })
+} 
