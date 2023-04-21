@@ -116,10 +116,12 @@ xhr.addEventListener('loadstart', function() {
 });
 
 xhr.addEventListener('load', function() {
-  setMap(coData)
+  setMap(coData, path)
   setTimeout(() => {
     loadingContainer.style.display = 'none'
-    changeColorsPop(maxYear, coData)
+    if(path == "/new-view.html") {
+      changeColorsPop(maxYear, coData);
+    }
   }, 3000);
 });
 

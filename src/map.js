@@ -9,13 +9,11 @@ const yearCont = document.querySelector('.year')
 const width = window.innerWidth - 150
 const height = window.innerHeight - 180
 
-const body = document.querySelector("body")
-
 // Vars for export
 let projection
 let map
 
-const setMap = (coData) => {
+const setMap = (coData, filePath) => {
     // Set the svg element
     const svg = d3.select('.map-container')
         .append('svg')
@@ -53,7 +51,7 @@ const setMap = (coData) => {
                 const dataForCountry = Object.values(coData).find(
                 (dat) => dat.id === d.id
                 ).data;
-                if(path == "/"){
+                if(filePath == "/"){
                     valueCO2 = getCO2(dataForCountry, parseInt(yearCont.innerText));
                 } else {
                     valueCO2 = getCO2Pop(dataForCountry, parseInt(yearCont.innerText)
@@ -64,9 +62,13 @@ const setMap = (coData) => {
                 } else {
                     valueCO2 = +valueCO2.toFixed(3)
                     if(valueCO2>1){
-                        valueCO2 += " Millions tons of CO2"
+                        filePath == "/"
+                          ? (valueCO2 += " Millions tons of CO2")
+                          : (valueCO2 += " Tons of CO2 per resident");
                     } else {
-                        valueCO2 += " Million tons of CO2";
+                        filePath == "/"
+                          ? (valueCO2 += " Million tons of CO2")
+                          : (valueCO2 += " Ton of CO2 per resident");
                     }
                 }
                 
