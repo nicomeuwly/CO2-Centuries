@@ -481,3 +481,21 @@ text {
 [data-active="false"] {
     display: none;
 }
+
+
+
+
+.message-cont .restart {
+    padding: 10px 25px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    border: solid 2px var(--white);
+}
+
+.message-cont .restart:hover {
+    cursor: pointer;
+    background-color: var(--white);
+    color: var(--black);
+}

@@ -89,7 +89,7 @@ const handleScroll = () => {
   if (year == maxYear) {
     setTimeout(() => {
       end.dataset.notended = "false"
-    }, 500)
+    }, 1000)
   } else {
     end.dataset.notended = "true"
   }
@@ -138,10 +138,11 @@ if (path == '/') {
   window.addEventListener('scroll', handleScroll)
 
   // ########################################### ____ FINAL SECTION BUTTONS
-  restart.addEventListener('click', function() {
-    window.location.href = '/'
-  })
   ready.addEventListener('click', function() {
     window.location.href = 'new-view.html'
   })
 } 
+
+restart.addEventListener('click', function() {
+  window.location.href = '/'
+})
