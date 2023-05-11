@@ -11,6 +11,7 @@ const start = document.querySelector('.start')
 const end = document.querySelector('.end')
 const restart = document.querySelector('.restart')
 const ready = document.querySelector('.ready')
+const range = document.querySelector('.range')
 
 let minYear = 1750
 let maxYear = 2021
@@ -18,6 +19,9 @@ let maxYear = 2021
 let coData = {}
 
 const path = window.location.pathname;
+
+
+
 
 // ########################################### ____ INFOS 
 const infosPict = d3.select('.infos')
@@ -79,6 +83,7 @@ const handleScroll = () => {
   let year = minYear + tot * percentage / 100 
   year = Math.floor(year)
   yearCont.innerText = year
+  range.value = year
 
   changeColors(year, coData)
   if (events[year]) {
@@ -102,6 +107,9 @@ const main = (data) => {
   const minAndMax = getMinMax(data)
   minYear = minAndMax.minYear
   maxYear = minAndMax.maxYear
+
+  range.min = minYear
+  range.max = maxYear
 
   if (path == '/new-view.html') {
     yearCont.innerText = maxYear
@@ -138,11 +146,22 @@ xhr.send();
 if (path == '/') {
   window.addEventListener('scroll', handleScroll)
 
+  // ########################################### ____ RANGE INPUT
+  range.addEventListener('input', function() { 
+    const rangeYear = range.value
+    const yearPercentage = (rangeYear - minYear) / (maxYear - minYear)
+    const totalHeight =  document.body.offsetHeight
+    window.scrollTo(0, totalHeight * yearPercentage - window.innerHeight)
+  })
+
+
   // ########################################### ____ FINAL SECTION BUTTONS
   ready.addEventListener('click', function() {
     window.location.href = 'new-view.html'
   })
 } 
+
+
 
 restart.addEventListener('click', function() {
   window.location.href = '/'

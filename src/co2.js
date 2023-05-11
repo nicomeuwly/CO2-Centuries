@@ -99,7 +99,7 @@ const changeColors = (year, coData) => {
       }
       if (count) {
         count.style.fill = color
-        console.log(value)
+        // console.log(value)
       }
     }
   }
@@ -122,7 +122,7 @@ const changeColorsPop = (year, coData) => {
       }
       if (count) {
         count.style.fill = color
-        console.log(value)  
+        // console.log(value)  
       }
     }
   }
