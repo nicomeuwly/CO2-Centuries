@@ -5,6 +5,7 @@ Nous avons publié notre site à l'aide de Netlify et il est accessible en [cliq
 Pour traiter nos données, nous avons créé un script pour garder uniquement les informations suivantes dans le fichier JSON : 
 - La quantité de CO2 par année pour chaque pays
 - La population par année pour chaque pays
+
 Nous n'avons malheuresement plus le script qui a réduit notre fichier de 1.5 millon de lignes à environ 100'000.
 ## Contexte
 *Contexte : d'où viennent les données, qui les a créées et dans quel contexte.*
