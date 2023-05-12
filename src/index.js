@@ -86,11 +86,30 @@ const handleScroll = () => {
   range.value = year
 
   changeColors(year, coData)
+
   if (events[year]) {
     const event = events[year]
     placePointer(event)
   } 
 
+  // ########################################### ____ REMOVE OLD EVENTS
+  const entries = Object.entries(events).filter(([key, value]) => key > (year + 1));
+
+  entries.forEach(entry => {
+    console.log(entry[1].id)
+    const pointerToRemove = document.getElementById("p-" + entry[1].id);
+    const messageToRemove = document.getElementById("ms-" + entry[1].id);
+    
+    if (pointerToRemove) {
+      pointerToRemove.remove();
+    }
+
+    if (messageToRemove) {
+      messageToRemove.remove();
+    }
+  });
+
+  // ########################################### ____ END OF SCROLL
   if (year == maxYear) {
     setTimeout(() => {
       end.dataset.notended = "false"
@@ -160,8 +179,6 @@ if (path == '/') {
     window.location.href = 'new-view.html'
   })
 } 
-
-
 
 restart.addEventListener('click', function() {
   window.location.href = '/'
